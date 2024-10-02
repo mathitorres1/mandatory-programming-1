@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obligatorio Mathias y Antonio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>E-Commerce Obligatorio</h1>
+
+    <div class="ventana" id="registro">
+      <h2>Registro de usuario</h2>
+      <form action="" id="formRegistro" class="form">
+        <label for="">Ingrese su Nombre</label>
+        <input type="text" id="nombreRegistro" />
+
+        <label for="">Ingrese su Apellido</label>
+        <input type="text" id="apellidoRegistro" />
+
+        <label for="">Ingrese su nuevo Usuario</label>
+        <input type="text" id="usuarioRegistro" />
+
+        <label for="">Ingrese su nueva contraseña</label>
+        <input type="text" id="passwordRegistro" />
+
+        <label for="">Ingrese su Tarjeta de crédito</label>
+        <input type="number" id="tarjetaRegistro" />
+
+        <label for="">Ingrese el código verificador de su tarjeta</label>
+        <input type="text" id="cvcRegistro" />
+
+        <input
+          type="button"
+          value="Completar Registro"
+          id="btnRegistro"
+          data-menu="login"
+        />
+        <input
+          type="button"
+          value="Volver al Login"
+          id="btnLogin2"
+          data-menu="login"
+        />
+      </form>
+
+      <p id="pErrorRegistro"></p>
+    </div>
+
+    <div class="ventana" id="login">
+      <h2>Login</h2>
+      <form action="" id="formIngresar" class="form">
+        <label for="">Ingrese su nombre de usuario</label>
+        <input type="text" id="txtUsuarioLogin" />
+
+        <label for="">Ingrese su contraseña</label>
+        <input type="text" id="txtPasswordLogin" />
+
+        <input type="button" value="Ingresar" id="btnLogin" />
+        <input
+          type="button"
+          value="Registrarse"
+          id="btnIrRegistro"
+          data-menu="registro"
+        />
+      </form>
+      <p id="pErrorLogin"></p>
+    </div>
+
+    <div class="ventana" id="productos">
+      <h2>Todos los Productos Disponibles</h2>
+
+      <div class="productosContenedor"></div>
+      <input type="button" value="Logout" id="btnLogout2" data-menu="login" />
+      <input
+        type="button"
+        id="btnComprasUsuario"
+        value="Administrar Compras"
+        data-menu="compras"
+      />
+      <input
+        type="button"
+        value="Producto en Oferta"
+        id="btnProductosEnOferta"
+        data-menu="ofertas"
+      />
+
+      <p id="pMensajeTodosLosProductos"></p>
+    </div>
+
+    <div class="ventana" id="compras">
+      <h2>Lista de Compras</h2>
+      <label>Elija la opcion por la que desea filtrar</label>
+      <select name="" id="filtroCompras">
+        <option value="">Seleccione una opción</option>
+        <option value="todas">Todas las compras</option>
+        <option value="aprobadas">Aprobadas</option>
+        <option value="pendientes">Pendientes</option>
+        <option value="canceladas">Canceladas</option>
+      </select>
+      <table>
+        <thead>
+          <th>Nombre:</th>
+          <th>Cantidad de unidades:</th>
+          <th>Monto Total:</th>
+          <th>Estado:</th>
+        </thead>
+        <tbody class="listaDeComprasContenedor"></tbody>
+      </table>
+      <input
+        type="button"
+        value="Volver a productos"
+        id="btnVolverCompras"
+        data-menu="productos"
+      />
+      <p id="pMensajeSaldo"></p>
+      <p id="pMensajeMonto"></p>
+    </div>
+
+    <div class="ventana" id="ofertas">
+      <h2>Productos en Oferta</h2>
+      <input
+        type="button"
+        value="Todos los Productos"
+        id="btnTodosLosProductos"
+        data-menu="productos"
+      />
+
+      <div class="productosEnOfertaContenedor" data-menu="ofertas">
+        <div class="producto">
+          <img src="./assets/campera.jpeg" alt="" />
+          <h4>Nombre producto</h4>
+          <p>Descripcion</p>
+          <p>Precio: $$$</p>
+          <p>Oferta: Si</p>
+          <p>Unidades:</p>
+          <input type="number" />
+          <input type="button" value="Comprar" />
+        </div>
+      </div>
+    </div>
+
+    <div class="ventana" id="comprasUsuarios">
+      <h2>Compras de los usuarios</h2>
+      <input
+        type="button"
+        value="Volver a dashboard"
+        id="btnVolverDashboard3"
+        data-menu="dashboardAdministradores"
+      />
+      <h3>Compras Pendientes</h3>
+      <table>
+        <thead>
+          <th>Nombre:</th>
+          <th>Cantidad de unidades:</th>
+          <th>Monto Total:</th>
+          <th>Estado:</th>
+        </thead>
+        <tbody class="comprasUsuariosContenedor"></tbody>
+      </table>
+      <h3>Compras Aprobadas</h3>
+      <table>
+        <thead>
+          <th>Nombre:</th>
+          <th>Cantidad de unidades:</th>
+          <th>Monto Total:</th>
+          <th>Estado:</th>
+        </thead>
+        <tbody class="comprasAprobadasUsuariosContenedor"></tbody>
+      </table>
+      <h3>Compras Canceladas</h3>
+      <table>
+        <thead>
+          <th>Nombre:</th>
+          <th>Cantidad de unidades:</th>
+          <th>Monto Total:</th>
+          <th>Estado:</th>
+        </thead>
+        <tbody class="comprasCanceladasUsuariosContenedor"></tbody>
+      </table>
+      <p id="pMensajeComprasUsuario"></p>
+    </div>
+
+    <div class="ventana" id="altaProductos">
+      <div class="crearProductosContenedor">
+        <h2>Crear Productos</h2>
+        <form action="" id="formCrearProducto" class="form">
+          <label for="">Ingrese el nombre del producto</label>
+          <input type="text" id="nombreCrearProducto" />
+
+          <label for="">Ingrese el precio</label>
+          <input type="number" id="precioCrearProducto" />
+
+          <label for="">Ingrese una descripción</label>
+          <input type="text" id="descripcionCrearProducto" />
+
+          <label for="">Ingrese URL de la imagen</label>
+          <input type="text" id="imagenCrearProducto" />
+
+          <label for="">Ingrese la cantidad de stock disponible</label>
+          <input type="number" id="stockCrearProducto" />
+
+          <input type="button" value="Crear Producto" id="btnCrearProducto" />
+          <input
+            type="button"
+            value="Volver Dashboard"
+            id="btnVolverDashboard"
+            data-menu="dashboardAdministradores"
+          />
+        </form>
+        <p id="pErrorCrearProducto"></p>
+      </div>
+    </div>
+
+    <div
+      class="ventana"
+      id="administrarProductos"
+      data-menu="administrarProductos"
+    >
+      <h3>Administrar Productos</h3>
+      <table>
+        <thead>
+          <th>Nombre:</th>
+          <th>Descripcion:</th>
+          <th>Oferta:</th>
+          <th>Estado:</th>
+          <th>Modificar estado:</th>
+          <th>Modificar stock:</th>
+          <th>Modificar oferta:</th>
+        </thead>
+        <tbody class="administrarProductosContenedor"></tbody>
+      </table>
+
+      <p id="pErrorModificarProductos"></p>
+
+      <input
+        type="button"
+        value="Volver Dashboard"
+        id="btnVolverDashboard2"
+        data-menu="dashboardAdministradores"
+      />
+    </div>
+
+    <div class="ventana" id="informe" data-menu="informe">
+      <h3>Informe de Ganancias</h3>
+      <div id="ventasTotalesContenedor"></div>
+      <input
+        type="button"
+        value="Volver Dashboard"
+        id="btnVolverDashboard4"
+        data-menu="dashboardAdministradores"
+      />
+      <p id="gananciaTotal"></p>
+    </div>
+
+    <div class="ventana" id="dashboardAdministradores">
+      <h1>ADMINISTRADORES DASHBOARD</h1>
+      <input type="button" id="btnLogout" value="Logout" data-menu="login" />
+      <input
+        type="button"
+        id="btnIrCrearProductos"
+        value="Crear Productos"
+        data-menu="altaProductos"
+      />
+      <input
+        type="button"
+        id="btnAdministrarCompras"
+        value="Administrar Compras"
+        data-menu="comprasUsuarios"
+      />
+      <input
+        type="button"
+        id="btnAdministrarProductos"
+        value="Administrar Productos"
+        data-menu="administrarProductos"
+      />
+      <input
+        type="button"
+        id="btnInforme"
+        value="Informe de Ganancias"
+        data-menu="informe"
+      />
+    </div>
+
+    <div class="ventana" id="dashboardClientes">
+      <h1>CLIENTES DASHBOARD</h1>
+
+      <input type="button" id="btnLogout" value="Logout" data-menu="login" />
+    </div>
+
+    <script src="./javascript/sistema.js"></script>
+    <script src="./javascript/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  margin-bottom: 10px;
+  width: 15%;
+}
+
+.productosContenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 20px;
+  width: 15%;
+}
+
+.producto p {
+  margin: 5px;
+}
+
+.producto input {
+  margin: 5px;
+}
+
+table {
+  border: 1px solid black;
+  margin: 20px;
+}
+
+th {
+  padding: 20px;
+}
+
+td {
+  padding: 0px 20px;
+}
+
+td input {
+  margin: 0px 15px;
+}
+
+input {
+  margin: 15px;
+}
+
+.productosEnOfertaContenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.comprasLista {
+  width: 30%;
+}
+
+.productoCompras {
+  margin: 20px;
+  height: 300px;
+}
+
+.productoCompras img {
+  width: 200px;
+  height: 200px;
+}
+
+.comprasInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modificarProductosContenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modificarProductosContenedor .producto img {
+  height: 250px;
+}
